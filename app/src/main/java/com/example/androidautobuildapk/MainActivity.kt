@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
 
         if (savedName != null && savedId != null) {
             resultText.text = "Welcome back $savedName\nZetra ID: $savedId"
+
+            // 🔒 LOCK IDENTITY
+            createBtn.isEnabled = false
+            createBtn.text = "ID LOCKED"
         }
 
         createBtn.setOnClickListener {
@@ -49,6 +53,10 @@ class MainActivity : AppCompatActivity() {
                 .apply()
 
             resultText.text = "User: $username\nZetra ID: $id"
+
+            // 🔒 LOCK AFTER CREATION
+            createBtn.isEnabled = false
+            createBtn.text = "ID LOCKED"
         }
     }
 
